@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.9.1/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.9.1/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.9.1/css/ionic.bundle.css"/>
+  
+  <script src="gallery.js"></script>
+
+  <title>Deportes!</title>
+  
+</head>
+
+<body onload="onLoad()">
+  
+  <ion-app>
+  
+    <ion-header>
+  
+      <ion-toolbar color="dark">
+        <ion-title>Deportes!</ion-title>
+        <ion-buttons slot="primary">          
+          <ion-button onclick="play()"><ion-icon slot="icon-only" name="play"></ion-icon></ion-button>
+          <ion-button onclick="previous()"><ion-icon slot="icon-only" name="skip-backward"></ion-icon></ion-button>
+          <ion-button onclick="pause()"><ion-icon slot="icon-only" name="pause"></ion-icon></ion-button>
+          <ion-button onclick="next()"><ion-icon slot="icon-only" name="skip-forward"></ion-icon></ion-button>                    
+        </ion-buttons>
+      </ion-toolbar>
+      
+      <ion-toolbar>
+        <ion-item>
+          <ion-range min="0" max="5000" value="4000">
+            <ion-icon slot="start" size="small" name="speedometer"></ion-icon>
+            <ion-icon slot="end" name="speedometer"></ion-icon>
+          </ion-range>
+        </ion-item>
+      </ion-toolbar>    
+      
+    </ion-header>
+    
+    <ion-content>
+    
+      <ion-tabs>
+        <ion-tab tab="futbol">
+          <ion-slides id="futbol">
+            <ion-slide><img src="img/futbol1.jpg" /></ion-slide>
+            <ion-slide><img src="img/futbol2.jpg" /></ion-slide>
+            <ion-slide><img src="img/futbol3.jpg" /></ion-slide>
+          </ion-slides>
+        </ion-tab>
+        <ion-tab tab="tenis">
+          <ion-slides id="tenis">
+            <ion-slide><img src="img/tenis1.jpg" /></ion-slide>
+            <ion-slide><img src="img/tenis2.jpg" /></ion-slide>
+            <ion-slide><img src="img/tenis3.jpg" /></ion-slide>
+          </ion-slides>
+        </ion-tab>
+        <ion-tab tab="baloncesto">
+          <ion-slides id="baloncesto">
+            <ion-slide><img src="img/baloncesto1.jpg" /></ion-slide>
+            <ion-slide><img src="img/baloncesto2.jpg" /></ion-slide>
+            <ion-slide><img src="img/baloncesto3.jpg" /></ion-slide>
+          </ion-slides>
+        </ion-tab>
+        
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="futbol">
+            <ion-icon name="football"></ion-icon>
+            <ion-label>Fútbol</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="tenis">
+            <ion-icon name="tennisball"></ion-icon>
+            <ion-label>Tenis</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="baloncesto">
+            <ion-icon name="basketball"></ion-icon>
+            <ion-label>Baloncesto</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+      
+    </ion-content>
+    
+  </ion-app>
+  
+</body>
+
+</html>
