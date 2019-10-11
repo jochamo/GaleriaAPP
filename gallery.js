@@ -50,3 +50,51 @@ function next() {
 function vibrar(){
 	navigator.vibrate(150);
 }
+//https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-camera/index.html#module_camera.getPicture
+function hacerFoto(){
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
+}
+function onSuccess(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
+}
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+function recuperarFoto(){
+    var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+    var options = setOptions(srcType);
+    var func = createNewFileEntry;
+
+    navigator.camera.getPicture(function cameraSuccess(imageUri) {
+
+        // Do something
+
+    }, function cameraError(error) {
+        console.debug("Unable to obtain picture: " + error, "app");
+
+    }, options);
+}
+
+//Mostrar alerta
+function presentAlertCordova(){
+    navigator.notification.alert(
+        'You are the winner!',  // message
+        alertDismissed,         // callback
+        'Game Over',            // title
+        'Done'                  // buttonName
+    );
+}
+
+function presentAlertIonic() {
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Alert';
+    alert.subHeader = 'Subtitle';
+    alert.message = 'This is an alert message.';
+    alert.buttons = ['OK'];
+  
+    document.body.appendChild(alert);
+    return alert.present();
+  }
