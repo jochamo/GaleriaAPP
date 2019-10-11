@@ -20,6 +20,7 @@
 	
 	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-vibration" />
+	<plugin name="cordova-plugin-exitapp" />
 	<plugin name="cordova-plugin-camera" />
 	
 	<feature name="Camera">
