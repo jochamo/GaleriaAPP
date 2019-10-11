@@ -38,8 +38,7 @@
             <ion-button onclick="recuperarFoto()"><ion-icon slot="icon-only" name="image"></ion-icon></ion-button>            
         </ion-buttons>
         <ion-buttons slot="end">          
-            <ion-button onclick="presentAlertCordova()"><ion-icon slot="icon-only" name="contact"></ion-icon></ion-button>            
-            <ion-button onclick="presentAlertIonic()"><ion-icon slot="icon-only" name="help-circle"></ion-icon></ion-button>            
+            <ion-button onclick="presentAlertIonic()"><ion-icon slot="icon-only" name="help-circle"></ion-icon></ion-button>
         </ion-buttons>
         <ion-item>
           <ion-range min="0" max="5000" value="4000">
@@ -56,6 +55,7 @@
       <ion-tabs>
         <ion-tab tab="futbol">
           <ion-slides id="futbol">
+              <ion-slide><img id="myImage" src="" /></ion-slide>
             <ion-slide><img src="img/futbol1.jpg" /></ion-slide>
             <ion-slide><img src="img/futbol2.jpg" /></ion-slide>
             <ion-slide><img src="img/futbol3.jpg" /></ion-slide>

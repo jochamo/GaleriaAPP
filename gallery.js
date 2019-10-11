@@ -3,6 +3,9 @@ function onLoad() {
     window.addEventListener('resize', init);
     getTabs().addEventListener("ionTabsWillChange", pause);
     init();
+
+    //Camara
+    document.addEventListener("deviceready", onDeviceReady, false);
 }
 function getDelay() {
     return(document.querySelector('ion-range'));
@@ -60,7 +63,8 @@ function onSuccess(imageURI) {
     image.src = imageURI;
 }
 function onFail(message) {
-    alert('Failed because: ' + message);
+    //alert('Failed because: ' + message);
+    presentAlertIonic();
 }
 
 function recuperarFoto(){
@@ -79,15 +83,6 @@ function recuperarFoto(){
 }
 
 //Mostrar alerta
-function presentAlertCordova(){
-    navigator.notification.alert(
-        'You are the winner!',  // message
-        alertDismissed,         // callback
-        'Game Over',            // title
-        'Done'                  // buttonName
-    );
-}
-
 function presentAlertIonic() {
     const alert = document.createElement('ion-alert');
     alert.header = 'Alert';
