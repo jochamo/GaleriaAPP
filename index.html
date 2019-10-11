@@ -16,7 +16,7 @@
   
 </head>
 
-<body onload="onLoad()">
+<body onLoad="onLoad()">
   
   <ion-app>
   
@@ -33,13 +33,6 @@
       </ion-toolbar>
       
       <ion-toolbar>
-        <ion-buttons slot="start">          
-            <ion-button onclick="hacerFoto()"><ion-icon slot="icon-only" name="camera"></ion-icon></ion-button>            
-            <ion-button onclick="recuperarFoto()"><ion-icon slot="icon-only" name="image"></ion-icon></ion-button>            
-        </ion-buttons>
-        <ion-buttons slot="end">          
-            <ion-button onclick="presentAlertIonic()"><ion-icon slot="icon-only" name="help-circle"></ion-icon></ion-button>
-        </ion-buttons>
         <ion-item>
           <ion-range min="0" max="5000" value="4000">
             <ion-icon slot="start" size="small" name="speedometer"></ion-icon>
@@ -48,6 +41,17 @@
         </ion-item>
       </ion-toolbar>    
       
+      <ion-toolbar color="dark">
+        <ion-buttons slot="start">          
+            <ion-button onclick="capturePhoto()"><ion-icon slot="icon-only" name="camera"></ion-icon></ion-button>            
+            <ion-button onclick="getPhoto(pictureSource.PHOTOLIBRARY);"><ion-icon slot="icon-only" name="image"></ion-icon></ion-button>            
+        </ion-buttons>
+        <ion-buttons slot="end">          
+            <ion-button onclick="presentAlertIonic()"><ion-icon slot="icon-only" name="help-circle"></ion-icon></ion-button>
+            <ion-button onclick="salir()"><ion-icon slot="icon-only" name="exit"></ion-icon></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      
     </ion-header>
     
     <ion-content>
@@ -55,7 +59,7 @@
       <ion-tabs>
         <ion-tab tab="futbol">
           <ion-slides id="futbol">
-              <ion-slide><img id="myImage" src="img/futbol1.jpg" /></ion-slide>
+            <ion-slide><img id="smallImage" src="" /></ion-slide>
             <ion-slide><img src="img/futbol1.jpg" /></ion-slide>
             <ion-slide><img src="img/futbol2.jpg" /></ion-slide>
             <ion-slide><img src="img/futbol3.jpg" /></ion-slide>
