@@ -14,6 +14,8 @@
 		Jose Chamorro Molina
 	</author>
 
+	<icon src="img/icon.png" />
+
 	<access origin="*" />
 	
 	<plugin name="cordova-plugin-whitelist" />
