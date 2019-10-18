@@ -53,7 +53,9 @@ function next() {
 function vibrar(){
 	navigator.vibrate(150);
 }
-//https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-camera/index.html#module_camera.getPicture
+
+
+	//https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-camera/index.html#module_camera.getPicture
 
  	var pictureSource;   // picture source
     var destinationType; // sets the format of returned value
@@ -96,29 +98,33 @@ function vibrar(){
       // console.log(imageURI);
 
       // Get image handle
-      //
       var largeImage = document.getElementById('largeImage');
 
       // Unhide image elements
-      //
       largeImage.style.display = 'block';
 
       // Show the captured photo
       // The inline CSS rules are used to resize the image
-      //
       largeImage.src = imageURI;
     }
 
+	
+		
     // A button will call this function
-    //
     function capturePhoto() {
+		
+	
+
+		navigator.camera.getPicture({ quality: 50, destinationType: destinationType.DATA_URL });
+
+
+
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
+      //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+      //  destinationType: destinationType.DATA_URL });
     }
 
     // A button will call this function
-    //
     function capturePhotoEdit() {
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
